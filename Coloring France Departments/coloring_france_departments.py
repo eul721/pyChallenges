@@ -16,5 +16,14 @@ for i in range(nNodes):
 queue = []
 colored = []
 
-print('Start coloring...')
 #TODO: implement recursive coloring algorithm
+
+print('Node with most neighbors : ' + str(MapNode.GetNodeWithMostNeighbors(nodes)))
+queue.append(MapNode.GetNodeWithMostNeighbors(nodes))
+
+print('Start coloring...')
+
+colors = [0];
+while len(queue) > 0:
+	cur_node = queue[0]
+	cur_node.CacheAvailableColors(colors)
